@@ -1,0 +1,88 @@
+
+//+------------------------------------------------------------------+
+//|                                                         Professor Trader MT4                                                  |
+//|                                             Developed by Forex Robot Easy Team                                       |
+//|                                     Developer's site: forexroboteasy.com                                       |
+//+------------------------------------------------------------------+
+#property strict
+
+// Symbol parameters
+string symbol1 = 'AUDNZD';
+string symbol2 = 'USDCAD';
+string symbol3 = 'EURUSD';
+string symbol4 = 'USDCHF';
+
+// Trend analysis function
+bool DetermineTrend(string symbol)
+{
+    // Add trend analysis logic here
+    return true; // Replace with actual trend analysis result
+}
+
+// Trend reversal analysis function
+bool DetermineTrendReversal(string symbol)
+{
+    // Add trend reversal analysis logic here
+    return false; // Replace with actual trend reversal analysis result
+}
+
+// Take profit (TP) and stop loss (SL) levels
+double GetTakeProfitLevel(string symbol)
+{
+    // Add take profit level calculation logic here
+    return 100.0; // Replace with actual take profit level
+}
+
+double GetStopLossLevel(string symbol)
+{
+    // Add stop loss level calculation logic here
+    return 50.0; // Replace with actual stop loss level
+}
+
+// Trading function
+void Trade(string symbol)
+{
+    if (DetermineTrend(symbol))
+    {
+        // Execute buy order
+        double takeProfit = GetTakeProfitLevel(symbol);
+        double stopLoss = GetStopLossLevel(symbol);
+
+        // Add buy order execution logic here
+        // Use takeProfit and stopLoss levels in the order
+
+        Print('Buy order executed for ', symbol);
+    }
+    else if (DetermineTrendReversal(symbol))
+    {
+        // Execute sell order
+        double takeProfit = GetTakeProfitLevel(symbol);
+        double stopLoss = GetStopLossLevel(symbol);
+
+        // Add sell order execution logic here
+        // Use takeProfit and stopLoss levels in the order
+
+        Print('Sell order executed for ', symbol);
+    }
+    else
+    {
+        Print('No trading opportunity for ', symbol);
+    }
+}
+
+// Multicurrency trading function
+void TradeAllSymbols()
+{
+    Trade(symbol1);
+    Trade(symbol2);
+    Trade(symbol3);
+    Trade(symbol4);
+}
+
+// Expert Advisor start function
+void OnTick()
+{
+    TradeAllSymbols();
+}
+
+//+------------------------------------------------------------------+
